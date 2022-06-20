@@ -92,7 +92,25 @@
         @apply  font-bold text-[#212245] cursor-pointer text-xl
     }
     /* component style in header componetJsx */
+/*common section */
+    .common_Sections{
+        @apply  bg-cover h-56 bg-no-repeat  opacity-50  py-20
+    }
+/*    pageinated*/
+        .paginateBtns {
+            @apply flex justify-center w-full  py-8 px-2 items-center gap-5
+        }
+    .paginateBtns a {
+        @apply flex justify-center items-center bg-red-600 px-2 py-2 rounded-sm text-white
+    }
+/*    pageinated*/
 
+/*common section */
 
 }
 
+.linear-customize {
+    background: linear-gradient(#212245b2 , #212245b2),url("./config/images/banner.jpg") no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;;
+}

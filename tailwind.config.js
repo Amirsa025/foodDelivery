@@ -12,6 +12,9 @@ module.exports = {
         'Sticky': '5px 5px 15px -5px #fde4e4',
       }
     },
+    backgroundImage: {
+      'Banner-Allfoods': "url('config/images/banner.jpg')",
+    }
   },
   plugins: [],
 }
