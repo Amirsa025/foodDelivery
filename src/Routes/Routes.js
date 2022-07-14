@@ -1,5 +1,6 @@
 import React from 'react';
-import { Routes, Route, Navigate } from "react-router-dom";
+import device from "current-device";
+import {Routes, Route, Navigate, useNavigate} from "react-router-dom";
 import Home from "../pages/home";
 import AllFoods from "../pages/Allfoods";
 import FoodDetails from "../pages/foodDetails";
@@ -15,7 +16,7 @@ const MainRoutes = () => {
                <Route path="/" element={<Navigate to="/home" />} />
                <Route path="home" index element={<Home/>} />
                <Route path="/foods"  element={<AllFoods/>} />
-               <Route path="/foods/:id"  element={<FoodDetails/>} />
+               <Route path="/food/:id"  element={<FoodDetails/>} />
                <Route path="/carts"  element={<Carts/>} />
                <Route path="/checkouts"  element={<CheckOuts/>} />
                <Route path="/login"  element={<Login/>} />

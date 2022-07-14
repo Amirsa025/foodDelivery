@@ -1,10 +1,9 @@
 import React from "react";
-import productImg from "../../../config/images/product_01.1.jpg";
 import {useDispatch} from "react-redux";
 import {cartAction} from "../../../store/shopping-cart/cartSlice";
 
 const Cart = ({item}) => {
-    const { title , price , totalQuantity , totalPrice ,image01 ,quantity , id} = item;
+    const { title , price  , totalPrice ,image01 ,quantity , id} = item;
     const dispatch = useDispatch()
     const incrementItem = ( )=>{
         dispatch(cartAction.addItem({
@@ -22,7 +21,7 @@ const Cart = ({item}) => {
     }
     return (<div className="cart__item px-3">
             <div className="flex gap-2 flex-col">
-                {/* logo and title  */}
+                {/* logo and title Almos   */} 
                     <div className = "py-2 flex  gap-4">
                         <img src={image01} alt="" className={"w-[2.188rem] h-[2.188rem] object-cover"}/>
                         <h6 className = "text-lg font-semibold">{title} </h6>
