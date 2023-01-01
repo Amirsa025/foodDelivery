@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Helmet from "../components/Hemlets/Hemlet";
 import CommonSection from "../components/UI/commonSection/CommonSection";
-import productImg from "../config/images/product_2.1.jpg"
 import {useParams} from "react-router-dom";
 import products from "../config/products";
 import ProductCard from "../components/UI/ProductCard";
@@ -11,21 +10,16 @@ import {cartAction} from "../store/shopping-cart/cartSlice";
 const FoodDetails = () => {
     const {id} = useParams()
     const dispatch = useDispatch()
-
     const [tabs, setTabs] = useState('desc')
     const [name, setEnteredName] = useState("");
     const [enteredEmail, setEnteredEmail] = useState("");
     const [reviewMsg, setReviewMsg] = useState("");
-
-
     const product = products.find(item => item.id === id)
     const {price, title, category, desc, image01} = product
     const reltedProduct = products.filter(item => category === item.category)
     const [preveiwImg, setPreveiwImg] = useState(product.image01)
     useEffect(() => {
         setPreveiwImg(product.image01)
-    }, [product])
-    useEffect(() => {
         window.scrollTo(0, 0)
     }, [product])
     //function
@@ -174,4 +168,4 @@ const FoodDetails = () => {
     );
 };
 
-export default FoodDetails;
+export default React.memo(FoodDetails);

@@ -16,7 +16,7 @@ import SliderTestimonial from "../components/UI/SliderTestimonial";
 
 const Home = () => {
 //    وصل شدن به ارایه
- 
+
 const [product, setProducts] = useState(products)
 //    برای مقایسه شدن است که اگر یکسان بودند باید در خروجی به ما نمایش دهد
     const [Category, setCategory] = useState('ALL')
@@ -25,25 +25,24 @@ const [product, setProducts] = useState(products)
         const filterdPizza = products.filter(item => item.category === 'Pizza')
         const slicePizza = filterdPizza.slice(0, 4)
         setHotPizza(slicePizza)
-    }, [])
-    useEffect(() => {
-        if (Category === 'ALL') {
-            setProducts(products)
+        switch(Category) {
+            case 'ALL':
+                return setProducts(products)
+            case 'Burger':
+              return   setProducts(products.filter(item => item.category === 'Burger'))
+            case 'Pizza':
+                const filterPizza = products.filter(item => item.category === 'Pizza')
+                setProducts(filterPizza)
+                break;
+            case 'Bread':
+                const filterBread = products.filter(item => item.category === 'Bread')
+                    setProducts(filterBread)
+                break;
+            default:
+                return  true
         }
-        if (Category === 'Burger') {
-            const filter = products.filter(item => item.category === 'Burger')
-            setProducts(filter)
-        }
-        if (Category === 'Pizza') {
-            const filter = products.filter(item => item.category === 'Pizza')
-            setProducts(filter)
-        }
-        if (Category === 'Bread') {
-            const filter = products.filter(item => item.category === 'Bread')
-            setProducts(filter)
-        }
-
     }, [Category])
+
     return (
         <Helmet title="Home">
             <section className={"grid md:grid-cols-2 sm:grid-cols-1 w-full pt-0"}>
@@ -312,4 +311,4 @@ const [product, setProducts] = useState(products)
     );
 };
 
-export default Home;
+export default React.memo(Home);
