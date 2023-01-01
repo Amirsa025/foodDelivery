@@ -23,7 +23,7 @@ const ProductCard = ({item}) => {
         {/*    down card*/}
             <div className={"text-right pt-8 pb-0 flex items-center justify-between text-right"}>
                 <span className={"product__price text-sm  font-semibold"}>  هزار تومان{" - "}{price}</span>
-                <button className={"addToCart bg-red-600 ml-4 text-white py-2 px-2 rounded-full cursor-pointer"} onClick={addToCart}>افزودن به سبد خرید</button>
+                <button className={"addToCart bg-red-600 sm:ml-4 text-white py-2 px-2 rounded-full cursor-pointer text-sm sm:text-sm "} onClick={addToCart}>افزودن به سبد خرید</button>
             </div>
         </div>
     );

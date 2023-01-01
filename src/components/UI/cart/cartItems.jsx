@@ -40,7 +40,7 @@ const CartProduct = () => {
 
                     </div>
                     <div className="cart_bottom flex items-center text px-2  w-full ">
-                        <button className=" bg-red-600    bg-white text-[0.9rem] rounded-lg py-1 px-1 ">
+                        <button className=" bg-red-600 bg-white text-[0.9rem] rounded-lg py-1 px-1 ">
                             <Link to="/checkouts">پرداخت صورت حساب</Link>
                         </button>
                         <span

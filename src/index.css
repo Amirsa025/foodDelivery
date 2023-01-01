@@ -114,3 +114,6 @@
     -webkit-background-size: cover;
     background-size: cover;;
 }
+textarea {
+    resize: none;
+}

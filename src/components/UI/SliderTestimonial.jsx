@@ -77,4 +77,4 @@ const SliderTestimonial = () => {
     );
 };
 
-export default SliderTestimonial;
+export default React.memo(SliderTestimonial);
